@@ -1,0 +1,13 @@
+.navbar-logo {
+    position:relative;;
+    height: 5rem;
+    top: -0.22rem;
+}
+
+.sm-icons{
+    flex-direction: row;
+}
+
+.sm-icons .nav-link{
+    padding-right: 1em;
+}
