@@ -1,17 +1,26 @@
-<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+<button type="button" class='btn btn-dark' routerLink="/nuevaedu" *ngIf="isLogged">
+  Agregar Educacion
+</button>
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5" *ngFor="let Educacion of educacion">
   <div class="col d-flex align-items-start">
-    <img 
+    <!-- <img 
       src="../../../assets/images/logoUndav.png" 
       alt="Imagen del logo de SmartBOL" 
       class="featurette-image img-fluid mx-auto img-thumbnail" 
       width="80" 
       height="80" 
-      preserveAspectRatio="xMidYMid slice">
+      preserveAspectRatio="xMidYMid slice"> -->
     <div class="ms-2">
-      <h5 class="fw-bold mb-0">Ing. en Informática</h5>
-      <p>Universidad de Avellaneda</p>
-      <p>2019-Actualidad</p>
+      <h5 class="fw-bold mb-0">{{Educacion.nombreE}}</h5>
+      <p>{{Educacion.descripcionE}}</p>
+      <!-- <p>2019-Actualidad</p> -->
     </div>
+    <button class="btn btn-dark" routerLink="/editedu/{{Educacion.id}}" *ngIf="isLogged">
+      <i class="bi bi-pencil-fill"></i>
+    </button>
+    <button class="btn btn-dark" (click)="delete(Educacion.id)" *ngIf="isLogged">
+      <i class="bi bi-trash-fill"></i>
+    </button>
   </div>
   
 
