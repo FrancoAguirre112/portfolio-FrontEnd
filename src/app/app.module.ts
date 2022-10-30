@@ -12,6 +12,8 @@ import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { interceptorProvider } from './service/interceptor-service';
 
 @NgModule({
   declarations: [
@@ -29,8 +31,13 @@ import { LoginComponent } from './components/login/login.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    BrowserModule,
+    FormsModule , 
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    interceptorProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
