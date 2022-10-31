@@ -1,6 +1,20 @@
-<div>
-    <h5 class="d-flex justify-content-center">HTML</h5>
+<div *ngFor="let Skill of skill" class="pt-4">
+    <h5 class="d-flex justify-content-center">{{Skill.nombre}}</h5>
     <div class="progress">
-        <div class="progress-bar progress-bar-striped bg-black" style="width:40%">40%</div>
+        <div class="progress-bar progress-bar-striped bg-black" [ngStyle]="{'width':Skill.porcentaje +'%'}">{{Skill.porcentaje}}%</div>
       </div>
+    
+    <div class="d-flex pt-2">
+      <button class="btn btn-dark flex-fill" routerLink="/editskill/{{Skill.id}}" *ngIf="isLogged">
+        <i class="bi bi-pencil-fill me-1"></i>
+      </button>
+      <button class="btn btn-dark flex-fill ms-1" (click)="delete(Skill.id)" *ngIf="isLogged">
+        <i class="bi bi-trash-fill"></i>
+      </button>
+    </div>
+</div>
+<div class="d-flex pt-4">
+  <button type="button" class='btn btn-dark flex-fill' routerLink="/nuevaskill" *ngIf="isLogged">
+    <i class="bi bi-plus-square"></i>
+  </button>
 </div>

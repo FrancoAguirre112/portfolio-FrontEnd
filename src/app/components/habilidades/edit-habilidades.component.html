@@ -1,0 +1,41 @@
+    <app-header></app-header>
+    <section class="h-100 gradient-custom-2">
+        <div class="container py-3 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div>
+              <div class="card">
+                <div>
+                  <div class="card-body text-black pt-3">
+                    <div class="mb-1">
+                      <div class="p-4" style="background-color: #f8f9fa">
+                        <h2 class="pb-2 border-bottom d-flex justify-content-center">
+                          Editar hablidad
+                        </h2>
+                        <form class="pt-4" (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                            <!-- Name input -->
+                            <div class="form-outline mb-4">
+                              <input type="text" id="nombre" class="form-control" placeholder="Habilidad" name="nombre" [(ngModel)]="skill.nombre" required/>
+                            </div>
+                          
+                            <!-- Number input -->
+                        <div class="form-outline mb-4">
+                            <input type="number" id="porcentaje" class="form-control" placeholder="Porcentaje de aprendizaje (0-100)" name="porcentaje" [(ngModel)]="skill.porcentaje" required/>
+                        </div>
+                          
+                            <!-- Submit button -->
+                            <div class="d-flex pt-4">
+                                <button type="submit" class='btn btn-dark flex-fill'>
+                                    Editar
+                                </button>
+                              </div>
+                            
+                          </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>

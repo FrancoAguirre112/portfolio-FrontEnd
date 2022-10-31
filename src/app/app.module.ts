@@ -18,6 +18,14 @@ import { NewExperienciaComponent } from './components/experiencia/new-experienci
 import { EditExperienciaComponent } from './components/experiencia/edit-experiencia.component';
 import { NeweducacionComponent } from './components/educacion/neweducacion.component';
 import { EditeducacionComponent } from './components/educacion/editeducacion.component';
+import { EditHabilidadesComponent } from './components/habilidades/edit-habilidades.component';
+import { NewHabilidadesComponent } from './components/habilidades/new-habilidades.component';
+import { EditacercaDeComponent } from './components/acerca-de/editacerca-de.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
+import { NewProyectosComponent } from './components/proyectos/new-proyectos.component';
+import { EditProyectosComponent } from './components/proyectos/edit-proyectos.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +41,12 @@ import { EditeducacionComponent } from './components/educacion/editeducacion.com
     NewExperienciaComponent,
     EditExperienciaComponent,
     NeweducacionComponent,
-    EditeducacionComponent
+    EditeducacionComponent,
+    EditHabilidadesComponent,
+    NewHabilidadesComponent,
+    EditacercaDeComponent,
+    NewProyectosComponent,
+    EditProyectosComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +54,8 @@ import { EditeducacionComponent } from './components/educacion/editeducacion.com
     HttpClientModule,
     BrowserModule,
     FormsModule , 
-    ReactiveFormsModule
+    ReactiveFormsModule, provideFirebaseApp(() => initializeApp(environment.firebase)), provideStorage(() => getStorage())
+    
   ],
   providers: [
     interceptorProvider

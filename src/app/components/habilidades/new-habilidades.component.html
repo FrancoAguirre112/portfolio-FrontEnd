@@ -9,30 +9,23 @@
                 <div class="mb-1">
                   <div class="p-4" style="background-color: #f8f9fa">
                     <h2 class="pb-2 border-bottom d-flex justify-content-center">
-                      Agregar nuevo titulo/curso
+                      Agregar habilidad
                     </h2>
                     <form class="pt-4" (ngSubmit)="onCreate()" novalidate #f="ngForm">
                         <!-- Name input -->
                         <div class="form-outline mb-4">
-                          <input type="text" id="nombreE" class="form-control" placeholder="Nombre del titulo/curso" name="nombreE" [(ngModel)]="nombreE" required/>
+                          <input type="text" id="nombre" class="form-control" placeholder="Habilidad" name="nombre" [(ngModel)]="nombre" required/>
                         </div>
                       
-                        <!-- Message input -->
+                        <!-- Number input -->
                         <div class="form-outline mb-4">
-                          <textarea class="form-control" id="descripcion" rows="4" placeholder="Descripcion del titulo/curso" name="descripcion" [(ngModel)]="descripcionE" required></textarea>
+                            <input type="number" id="porcentaje" class="form-control" placeholder="Porcentaje de aprendizaje (0-100)" name="porcentaje" [(ngModel)]="porcentaje" required/>
                         </div>
-
-                        <div class="form-outline mb-4">
-                            <label for='img' class="form-label mb-2">Logo de la empresa proveedora del titulo/curso</label>
-                            <input type="file" class="form-control" id="imgE" name="imgE" [(ngModel)]="imgE" (change)="uploadImage($event)"
-                accept=".jpg, .jpeg, .png">
-                          </div>
-
                       
                         <!-- Submit button -->
                         <div class="d-flex pt-4">
-                            <button type="submit" class='btn btn-dark flex-fill' [disabled]="uploadingImg">
-                                {{uploadingImg?"Subiendo Imagen":"Agregar"}}
+                            <button type="submit" class='btn btn-dark flex-fill'>
+                                Agregar
                             </button>
                           </div>
                         

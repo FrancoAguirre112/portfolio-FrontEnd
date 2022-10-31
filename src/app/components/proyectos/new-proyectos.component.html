@@ -1,0 +1,53 @@
+    <app-header></app-header>
+    <section class="h-100 gradient-custom-2">
+        <div class="container py-3 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div>
+              <div class="card">
+                <div>
+                  <div class="card-body text-black pt-3">
+                    <div class="mb-1">
+                      <div class="p-4" style="background-color: #f8f9fa">
+                        <h2 class="pb-2 border-bottom d-flex justify-content-center">
+                          Agregar proyecto
+                        </h2>
+                        <form class="pt-4" (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                            <!-- Name input -->
+                            <div class="form-outline mb-4">
+                              <input type="text" id="nombre" class="form-control" placeholder="Nombre del proyecto" name="nombre" [(ngModel)]="nombre" required/>
+                            </div>
+                          
+                            <!-- Message input -->
+                            <div class="form-outline mb-4">
+                              <textarea class="form-control" id="descripcion" rows="4" placeholder="Descripcion del proyecto" name="descripcion" [(ngModel)]="descripcion" required></textarea>
+                            </div>
+
+                            <div class="form-outline mb-4">
+                                <label for='img' class="form-label mb-2">Imagen del proyecto</label>
+                                <input type="file" class="form-control" id="img" name="img" [(ngModel)]="img" (change)="uploadImage($event)"
+                    accept=".jpg, .jpeg, .png">
+                              </div>
+
+                              <div class="form-outline mb-4">
+                                <input type="text" id="link" class="form-control" placeholder="Link al proyecto" name="link" [(ngModel)]="link" required/>
+                              </div>
+                          
+                            <!-- Submit button -->
+                            <div class="d-flex pt-4">
+                                <button type="submit" class='btn btn-dark flex-fill' [disabled]="uploadingImg">
+                                    {{uploadingImg?"Subiendo Imagen":"Agregar"}}
+                                </button>
+                              </div>
+                            
+                          </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    

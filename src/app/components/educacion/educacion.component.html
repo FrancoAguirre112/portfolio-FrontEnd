@@ -1,107 +1,21 @@
-<button type="button" class='btn btn-dark' routerLink="/nuevaedu" *ngIf="isLogged">
-  Agregar Educacion
-</button>
-<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5" *ngFor="let Educacion of educacion">
-  <div class="col d-flex align-items-start">
-    <!-- <img 
-      src="../../../assets/images/logoUndav.png" 
-      alt="Imagen del logo de SmartBOL" 
-      class="featurette-image img-fluid mx-auto img-thumbnail" 
-      width="80" 
-      height="80" 
-      preserveAspectRatio="xMidYMid slice"> -->
-    <div class="ms-2">
-      <h5 class="fw-bold mb-0">{{Educacion.nombreE}}</h5>
-      <p>{{Educacion.descripcionE}}</p>
-      <!-- <p>2019-Actualidad</p> -->
+  <div class="card border-0 bg-light pt-4" style="width: 12rem;" *ngFor="let Educacion of educacion">
+    <img style="width: 150px; height: 150px;" class="card-img-top"  src={{Educacion.imgE}} alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{Educacion.nombreE}}</h5>
+      <p class="card-text">{{Educacion.descripcionE}}</p>
     </div>
-    <button class="btn btn-dark" routerLink="/editedu/{{Educacion.id}}" *ngIf="isLogged">
-      <i class="bi bi-pencil-fill"></i>
-    </button>
-    <button class="btn btn-dark" (click)="delete(Educacion.id)" *ngIf="isLogged">
-      <i class="bi bi-trash-fill"></i>
+    <div class="d-flex pt-2">
+      <button class="btn btn-dark flex-fill" routerLink="/editedu/{{Educacion.id}}" *ngIf="isLogged">
+        <i class="bi bi-pencil-fill me-1"></i>
+      </button>
+      <button class="btn btn-dark flex-fill ms-1" (click)="delete(Educacion.id)" *ngIf="isLogged">
+        <i class="bi bi-trash-fill"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="d-flex pt-4">
+    <button type="button" class='btn btn-dark flex-fill' routerLink="/nuevaedu" *ngIf="isLogged">
+      <i class="bi bi-plus-square"></i>
     </button>
   </div>
-  
-
-<!-- 
-
-<section class="h-100 gradient-custom-2">
-    <div class="container py-3 h-100">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div>
-          <div class="card">
-            <div>
-                <div class="card-body text-black pt-3">
-                    <div class="mb-1">
-                      <div class="p-4" style="background-color: #f8f9fa;">
-                        <div class="container px-4 py-5" id="icon-grid">
-                          <h2 class="pb-2 border-bottom d-flex justify-content-center">Educación</h2>
-                          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
-                            <div class="col d-flex align-items-start">
-                              <img 
-                                src="../../../assets/images/logoUndav.png" 
-                                alt="Imagen del logo de SmartBOL" 
-                                class="featurette-image img-fluid mx-auto img-thumbnail" 
-                                width="80" 
-                                height="80" 
-                                preserveAspectRatio="xMidYMid slice">
-                              <div class="ms-2">
-                                <h5 class="fw-bold mb-0">Ing. en Informática</h5>
-                                <p>Universidad de Avellaneda</p>
-                                <p>2019-Actualidad</p>
-                              </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                              <img 
-                                src="../../../assets/images/logoEF.png" 
-                                alt="Imagen del logo de SmartBOL" 
-                                class="featurette-image img-fluid mx-auto img-thumbnail" 
-                                width="80" 
-                                height="80" 
-                                preserveAspectRatio="xMidYMid slice">
-                              <div class="ms-2">
-                                <h5 class="fw-bold mb-0">EFSET English Certificate</h5>
-                                <p>EF Standar English Test (C2 Proficient)</p>
-                                <p>May. 2021</p>
-                              </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                              <img 
-                                src="../../../assets/images/logoPlatzi.png" 
-                                alt="Imagen del logo de SmartBOL" 
-                                class="featurette-image img-fluid mx-auto img-thumbnail" 
-                                width="80" 
-                                height="80" 
-                                preserveAspectRatio="xMidYMid slice">
-                              <div class="ms-2">
-                                <h5 class="fw-bold mb-0">Featured title</h5>
-                                <p>Paragraph of text beneath the heading to explain the heading.</p>
-                                <p>2019-Actualidad</p>
-                              </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                              <img 
-                                src="../../../assets/images/logoPlatzi.png" 
-                                alt="Imagen del logo de SmartBOL" 
-                                class="featurette-image img-fluid mx-auto img-thumbnail" 
-                                width="80" 
-                                height="80" 
-                                preserveAspectRatio="xMidYMid slice">
-                              <div class="ms-2">
-                                <h5 class="fw-bold mb-0">Featured title</h5>
-                                <p>Paragraph of text beneath the heading to explain the heading.</p>
-                                <p>2019-Actualidad</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->

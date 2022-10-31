@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Educacion } from '../../model/educacion';
 import { EducacionService } from '../../service/educacion.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ImageService } from 'src/app/service/image.service';
 
 @Component({
   selector: 'app-editeducacion',
@@ -10,7 +11,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class EditeducacionComponent implements OnInit {
   educacion: Educacion = null;
-  constructor(private educacionS: EducacionService, private activatedRouter: ActivatedRoute, private router: Router) { }
+  uploadingImg: boolean = false;
+
+  constructor(private educacionS: EducacionService, private activatedRouter: ActivatedRoute, private router: Router, private imageService: ImageService) { }
 
   ngOnInit(): void {
     const id = this.activatedRouter.snapshot.params['id'];
@@ -25,6 +28,7 @@ export class EditeducacionComponent implements OnInit {
 
   onUpdate(): void {
     const id = this.activatedRouter.snapshot.params['id'];
+    this.educacion.imgE = this.imageService.url;
     this.educacionS.update(id, this.educacion).subscribe(data => {
       this.router.navigate(['']);
     }, err => {
@@ -32,5 +36,15 @@ export class EditeducacionComponent implements OnInit {
       this.router.navigate(['']);
     }
     )
+  }
+
+  uploadImage($event: any) {
+    this.uploadingImg = true;
+    const id = this.activatedRouter.snapshot.params['id'];
+    const name = "educacion_"+ id;
+    this.imageService.uploadImage($event, name);
+    setTimeout(() => {
+      this.uploadingImg = false;
+    }, 1000);
   }
 }
