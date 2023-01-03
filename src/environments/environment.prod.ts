@@ -9,5 +9,5 @@ export const environment = {
     messagingSenderId: '359259570458',
   },
   production: true,
-  URL: 'https://portfolio-backend-production-e8b3.up.railway.app/'
+  URL: 'https://portfolio-francoaguirre112.koyeb.app/'
 };
