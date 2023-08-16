@@ -9,5 +9,5 @@ export const environment = {
     messagingSenderId: '359259570458',
   },
   production: true,
-  URL: 'https://portfolio-francoaguirre112.koyeb.app/'
+  URL: 'https://portfolio-backend-h2iw.onrender.com/'
 };
