@@ -13,5 +13,5 @@ The Editable Portfolio Website is a web application built using Angular, Bootstr
 
 **Credentials:** Use these credentials to access the edit feature.
 
-**Username**: FrancoAguirre
-**Password**: admin123
+**Username**: admin
+**Password**: admin
